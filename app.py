@@ -1,3 +1,5 @@
+import os
+from dotenv import load_dotenv
 from flask import Flask
 from flask import jsonify
 from flask import request
@@ -17,11 +19,11 @@ Base = declarative_base()
 pymysql.install_as_MySQLdb()
 
 # Database Connection
-username = 'root'
-password = 'root'
-host = 'localhost'
-port = 3306
-database = 'la_collisions_db'
+username = os.getenv("DATABASE_USERNAME")
+password = os.getenv("DATABASE_PASSWORD")
+host = os.getenv("DATABASE_HOST")
+port = os.getenv("DATABASE_PORT")
+database = os.getenv("DATABASE_NAME")
 
 # Format:
 # `<Dialect>://<Username>:<Password>@<Host Address>:<Port>/<Database>`
