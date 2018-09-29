@@ -1,0 +1,92 @@
+
+body {
+      background-color:#b7d6e7;
+      font-family: serif;
+      font-size: 10PX;
+      padding:15;
+      margin: 15; */
+      /* font-weight:bold; */
+  }
+
+
+h1 {
+  font-style: italic;
+  color:#333030;
+  font-size: 18PX;
+}
+
+h2 {
+  font-family: monospace;
+  color: #FF3860;
+  font-size: 9PX;
+}
+
+h3 {
+  font-family:serif;
+  color: #333030;
+  font-size: 8PX;
+}
+/* ALT COLOR: #8b7d7b */
+li {
+  font-weight:bold;
+  font-color:#242a2e;
+  font-size: 14PX;
+  font-family: sans-serif;
+  font-weight:bolder;
+}
+
+/*NAVBAR OPTIONS*/
+.navbar{
+         padding-left: 50px;
+         font-family: sans-serif;
+         font-size: 10;
+         text-align: left;
+}
+/*NAVBAR BACKGROUND COLOR, ACCENT COLOR WHEN CLICK*/
+.navbar-default .navbar-brand {
+    color: #eeeeed;
+    background-color:#d690b2;
+    font-weight: bold;
+    text-align: left;
+    font-family: sans-serif;
+    font-size: 20PX;
+}
+/*MAIN COLOR ACROSS NAVBAR */
+.navbar {
+    background-color: white;
+}
+/*NAVBAR FOR COLOR OF FONT */
+.navbar-default .navbar-brand {
+    color: #eeeeed;
+    background-color:#d690b2;
+    font-weight: bold;
+    text-align: left;
+    font-family: sans-serif;
+    font-size: 20PX;
+}
+/*MAP OPTIONS */
+/* set map, body, and html to 100% of the screen size */
+#map,
+body,
+html {
+  height: 100%;
+}
+
+.legend {
+    line-height: 20px;
+    color: #333030;
+    background-color: #f2f2f2;
+    padding: 7px;
+    border-radius: 7px;
+}
+.legend i {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-right: 14px;
+    opacity: 0.75;
+}
+
+.leaflet-bottom.leaflet-left{
+    width: 90%;
+  }

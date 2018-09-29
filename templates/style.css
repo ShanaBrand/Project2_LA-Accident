@@ -1,3 +1,5 @@
+/*
+
 /*COLOR IS PALE BLUE*/
 body {
     background-color:#b7d6e7;
@@ -260,3 +262,31 @@ h9 {
   font-size: 35PX;
   text-align: left;
 }
+
+
+/*MAP OPTIONS */
+/* set map, body, and html to 100% of the screen size */
+#map,
+body,
+html {
+  height: 100%;
+}
+
+.legend {
+    line-height: 20px;
+    color: #333030;
+    background-color: #f2f2f2;
+    padding: 7px;
+    border-radius: 7px;
+}
+.legend i {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-right: 14px;
+    opacity: 0.75;
+}
+
+.leaflet-bottom.leaflet-left{
+    width: 90%;
+  }
