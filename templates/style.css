@@ -1,0 +1,292 @@
+/*
+
+/*COLOR IS PALE BLUE*/
+body {
+    background-color:#b7d6e7;
+    font-family: serif;
+    font-size: 10PX;
+    /* font-weight:bold; */
+    padding-top: 0px;
+    padding-right: 60px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+
+/*THIS IS TO THE RIGHT OF THE BODY */
+.col-md-4 {
+  font-family: serif;
+  font-size: 10PX;
+  /* font-weight:bold; */
+  padding-top: 15px;
+  padding-right: 35px;
+  padding-bottom: 5px;
+  padding-left: 25px;
+}
+
+col-xs-12 col-md-6 {
+    background-color: white;
+    font-family: serif;
+}
+
+col-lg-6 col-md-6 col-sm-3 col-xs-6 {
+  text-align:right;
+  padding-top: 22px;
+  padding-right: 22px;
+  padding-bottom: 22px;
+  padding-left: 22px;
+
+}
+
+col-lg-12 col-md-12 col-sm-3 col-xs-6 {
+  padding-top: 42px;
+  padding-right: 42px;
+  padding-bottom: 42px;
+  padding-left: 42px;
+  text-align: left;
+}
+
+/*TABLE */
+thead{
+  padding-top: 70px;
+  padding-right: 60px;
+  padding-bottom: 75px;
+  padding-left: 70px;
+}
+
+/* ALT COLOR: #8b7d7b */
+li {
+  font-weight:bold;
+  font-color:#242a2e;
+  font-size: 14PX;
+  font-family: sans-serif;
+  font-weight:bolder;
+}
+/*ALT COLOR: #dfdfdf */
+/*COLOR IS PALE YELLOW*/
+section {
+    background-color:#f4ea8e;
+    font-family: serif;
+    padding-top: 100px;
+    padding-right: 30px;
+    padding-bottom: 35px;
+    padding-left: 35px;
+}
+
+figure {
+    background-color: white;
+    font-family: serif;
+;
+}
+/*PADDING OPTIONS FOR PNGS*/
+img {
+    padding-top: 15px;
+    padding-right: 10px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+}
+/*PARAGRAPH TEXT, DARK, PADDING OPTIONS*/
+p {color:#242a2e;
+   font-family: serif;
+   font-size: 20PX;
+   text-align: left;
+   font-style: italic;
+   padding-right: 115px;
+   padding-left: -30px;
+   padding-bottom: 10px;
+   padding-top:3px;
+}
+/*BACKGROUND COLOR IS PALE PINK */
+  /* #3b3b3b; */
+.container {
+  background-color:	#d690b2;
+  /* white */
+  font-family: sans-serif;
+  font-size: 12;
+  text-align: left;
+  /* padding-top: 22px;
+  padding-right: 22px;
+  padding-bottom: 22px;
+  padding-left: 22px; */
+}
+.box-single {
+  background-color: white;
+  font-family: sans-serif;
+  font-size: 10;
+  text-align: left;
+}
+
+/*BUTTON OPTIONS*/
+.btn-info {
+    color: #242a2e;
+    background-color: #b7d6e7;
+    border-color: #fff;
+    font-size:20PX;
+    font-weight:bolder;
+    text-align: right;
+    padding-top: 25px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    border-width:thick;
+    Opacity: .88
+}
+/*WHEN YOU HOVER OVER IT WITH MOUSE, IT TURNS THIS COLOR */
+/*YELLOW, DARK TEXT, WHITE BORDER*/
+.btn-info:hover {
+    color: #242a2e;
+    background-color: #f4ea8e;
+    border-color: #fff;
+    BORDER-WIDTH: THICK;
+}
+/*NAVBAR OPTIONS*/
+.navbar{
+         padding-left: 50px;
+         font-family: sans-serif;
+         font-size: 10;
+         text-align: left;
+}
+/*NAVBAR BACKGROUND COLOR, ACCENT COLOR WHEN CLICK*/
+.navbar-default .navbar-brand {
+    color: #eeeeed;
+    background-color:#d690b2;
+    font-weight: bold;
+    text-align: left;
+    font-family: sans-serif;
+    font-size: 20PX;
+}
+/*MAIN COLOR ACROSS NAVBAR */
+.navbar {
+    background-color: white;
+}
+/*NAVBAR FOR COLOR OF FONT */
+.navbar-default .navbar-brand {
+    color: #eeeeed;
+    background-color:#d690b2;
+    font-weight: bold;
+    text-align: left;
+    font-family: sans-serif;
+    font-size: 20PX;
+}
+/*SPECIAL HEADERS FOR VARIOUS EFFECTS */
+/*COLOR IS PALE PINK*/
+h1 {
+     color: #d690b2;
+     /* #fef7bb; */
+     font-family: sans-serif;
+     font-weight: bold;
+     text-align: left;
+     font-size: 35PX;
+}
+/*COLOR IS LIGHTER PALE BLUE*/
+h2 {
+      color: 	#dbeaf3;
+      font-family: sans-serif;
+      font-weight: bold;
+      text-align: left;
+      font-size: 18PX;
+      /* font-size: 20; */
+}
+/*THIS CONTROLS FONT AND COLOR OF TEXT ON HOME + CHARTS IN SUMMARY*/
+/*BACKGROUND COLOR IS PALE BLUE, DARK FONT, LIGHTER OPACITY*/
+h3 {
+     color: #242a2e;
+     background-color: #b7d6e7;
+     /*YELLOW: background-color: #ffffe1; */
+     font-family: serif;
+     font-weight: bold;
+     font-style: italic;
+     font-size: 20PX;
+     text-align: left;
+     padding-left: 9.75px;
+     padding-top: 4.75px;
+     padding-right: 9.75px;
+     padding-bottom: 4.75px;
+     Opacity: .88;
+
+}
+/* COLOR IS LIGHT LIGHT GREY */
+h4 {
+     color: #eeeeed;
+     /* #fef7bb; */
+     font-family: sans-serif;
+     font-weight: bold;
+     font-size: 35PX;
+     text-align: left;
+}
+/*COLOR IS MEDIUM GREY */
+h5 {
+     color:#433e46;
+     /* #fef7bb; */
+     font-family: sans-serif;
+     font-weight: bold;
+     font-size: 35PX;
+     text-align: left;
+}
+/*COLOR IS SALMON*/
+h6 {
+     color: #ffa7a7;
+     /* #fef7bb; */
+     font-family: sans-serif;
+     font-weight: bold;
+     font-size: 35PX;
+     text-align: left;
+}
+/*TITLE FONT*/
+/*COLOR IS DARK, BIG*/
+h7 {
+     color: #242a2e;
+     /* #fef7bb; */
+     font-family: sans-serif;
+     font-weight: bolder;
+     text-align: left;
+     font-size: 54PX;
+}
+/*COLOR IS DARK, TEXT FONT FOR DESCRIPTIONS*/
+h8 {
+    color:#242a2e;
+     font-family: sans-serif;
+     font-size: 18PX;
+     text-align: left;
+     font-weight: bold;
+     padding-right: 0px;
+     padding-left: 0px;
+     padding-bottom: 30px;
+     padding-top:0px;
+}
+/*COLOR IS LIGHT LIGHT MUTED PINK */
+/*FEATURED AS ACCENT, ON DATA PROCESS PAGE*/
+h9 {
+  color:#e7d3dd;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 35PX;
+  text-align: left;
+}
+
+
+/*MAP OPTIONS */
+/* set map, body, and html to 100% of the screen size */
+#map,
+body,
+html {
+  height: 100%;
+}
+
+.legend {
+    line-height: 20px;
+    color: #333030;
+    background-color: #f2f2f2;
+    padding: 7px;
+    border-radius: 7px;
+}
+.legend i {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-right: 14px;
+    opacity: 0.75;
+}
+
+.leaflet-bottom.leaflet-left{
+    width: 90%;
+  }
