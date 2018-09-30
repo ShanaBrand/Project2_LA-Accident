@@ -68,10 +68,15 @@ function createMap(collisions) {
     "Satellite": satellitemap,
   };
   // var heat = L.heatLayer(heatArray, { radius: 35 });
-
+  var heat = L.heatLayer(heatArray,
+    {radius: 90,
+    blur: 1.5,
+    opacity: .6}
+  )
   // Create overlay object to hold our overlay layer
   var overlayMaps = {
     "Collisions": collisions,
+    "Heatmap":heat,
     // "Heatmap": heat
   };
 
@@ -80,8 +85,8 @@ function createMap(collisions) {
     center: [
       34.052, -118.243
     ],
-    zoom: 11,
-    layers: [streetmap, collisions]
+    zoom: 13,
+    layers: [streetmap,collisions,heat]
   });
 
   // Create a layer control
@@ -90,12 +95,9 @@ function createMap(collisions) {
   L.control.layers(baseMaps, overlayMaps, {
     collapsed: false
   }).addTo(myMap)}
+  //
+  // heat.addTo(myMap);
 
-//   var heat = L.heatLayer(heatArray,
-//     {radius: 18,
-//     blur: 35}
-//   ).addTo(myMap);
-// }
 
 
 //

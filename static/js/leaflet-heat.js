@@ -1,8 +1,3 @@
-/*
- (c) 2014, Vladimir Agafonkin
- simpleheat, a tiny JavaScript library for drawing heatmaps with Canvas
- https://github.com/mourner/simpleheat
-*/
 !(function() {
 
 
@@ -100,7 +95,7 @@ L.HeatLayer = (L.Layer ? L.Layer : L.Class).extend({ initialize: function(t, i) 
       w = v.x % g,
       y = v.y % g; for (t = 0, i = this._latlngs.length; i > t; t++) {
         if (a = this._map.latLngToContainerPoint(this._latlngs[t]), m.contains(a)) {
-          e = Math.floor((a.x - w) / g) + 2, n = Math.floor((a.y - y) / g) + 2; var x = void 0 !== this._latlngs[t].alt ? this._latlngs[t].alt : void 0 !== this._latlngs[t][2] ? +this._latlngs[t][2] : 1; r = x * f, p[n] = p[n] || [], s = p[n][e], s ? (s[0] = (s[0] * s[2] + a.x * r) / (s[2] + r), s[1] = (s[1] * s[2] + a.y * r) / (s[2] + r), s[2] += r) : p[n][e] = [a.x, a.y, r];
+          e = Math.floor((a.x - w) / g) + 2, n = Math.floor((a.y - y) / g) + 2; var x = void 0 !== this._latlngs[t].alt ? this._latlngs[t].alt : void 0 !== this._latlngs[t][2] ? + this._latlngs[t][2] : 1; r = x * f, p[n] = p[n] || [], s = p[n][e], s ? (s[0] = (s[0] * s[2] + a.x * r) / (s[2] + r), s[1] = (s[1] * s[2] + a.y * r) / (s[2] + r), s[2] += r) : p[n][e] = [a.x, a.y, r];
         }
       } for (t = 0, i = p.length; i > t; t++) if (p[t]) for (h = 0, o = p[t].length; o > h; h++)s = p[t][h], s && d.push([Math.round(s[0]), Math.round(s[1]), Math.min(s[2], c)]); this._heat.data(d).draw(this.options.minOpacity), this._frame = null;
   },
