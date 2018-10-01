@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
       <link rel="stylesheet" href="../static/css/style.css">
+      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+      <script src="../static/js/plot_year.js"></script>
 </head>
 
 <!-- NAVBAR, NAVBAR BUTTON ON HEADER, CONTAINER-FLUID -->
@@ -54,25 +56,24 @@
             </div>
         </nav>
          -->
-                          <div class="container">
-                                <div class="row row-grid">
-                                    <div class="col-md-8">
-                                        <div class="box box-left">
-                                        <section id="intro">
-                                            <h5>Year</h5>
-                                            <hr>
-                                            <figure>
-                                                <a target="_blank" href="../static/assets/year.png">
-                                                <img id="viz-main" src="../static/assets/year.png" alt="vs. Time" width="95%" height="95%">
-                                                </a>
-                                            </figure>
-                                            <section id="summary">
-                                            <p>This is the visualization for: Year.
-                                            </p>
-                                            </section>
-                                        </section>
-                                        </div>
-                                    </div>
+         <div class="container">
+               <div class="row row-grid">
+                   <div class="col-md-8">
+                       <div class="box box-left">
+                       <section id="intro">
+                           <h5>Year Visualization</h5>
+                          <div id="yearPlot"></div>
+                               <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                               <script src="../static/js/plot_year.js"></script>
+
+                           <!-- <section id="summary"> -->
+                           <p>This is the visualization for: Year.
+                           </p>
+
+                           </section>
+                       <!-- </section> -->
+                       </div>
+                   </div>
 <!-- MATRIX OF THUMBNAILS THAT CLICK INTO HTML VISUALIZATION PAGES -->
                                     <div class="col-md-4">
                                         <div class="box box-right">

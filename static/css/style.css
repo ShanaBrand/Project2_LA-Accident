@@ -23,6 +23,16 @@ body {
   padding-left: 25px;
 }
 
+.axis {
+  font: 14px sans-serif;
+}
+
+.line {
+  fill: none;
+  stroke: orange;
+  stroke-width: 2px;
+}
+
 col-xs-12 col-md-6 {
     background-color: white;
     font-family: serif;
@@ -87,13 +97,13 @@ img {
 /*PARAGRAPH TEXT, DARK, PADDING OPTIONS*/
 p {color:#242a2e;
    font-family: serif;
-   font-size: 20PX;
+   font-size: 25PX;
    text-align: left;
    font-style: italic;
-   padding-right: 115px;
-   padding-left: -30px;
-   padding-bottom: 10px;
-   padding-top:3px;
+   padding-right: 22px;
+   padding-left: 4px;
+   padding-bottom: 4px;
+   padding-top:4px;
 }
 /*BACKGROUND COLOR IS PALE PINK */
   /* #3b3b3b; */
