@@ -4,15 +4,15 @@
 <!-- PAGE TITLE -->
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Age Visualization</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <!-- <title>Age</title> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
-      <link rel="stylesheet" href="../static/css/style.css">
-      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-      <script src="../static/js/ethnicityPlot.js"></script>
-      <script src="data.js"></script>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <!-- <script src="../static/js/piePlot.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
 </head>
 
 <!-- NAVBAR, NAVBAR BUTTON ON HEADER, CONTAINER-FLUID -->
@@ -37,8 +37,7 @@
                            <li><a href="age">Age</a></li>
                            <li><a href="gender">Gender</a></li>
                            <li><a href="year">Year</a></li>
-                           <li><a href="time">Time</a></li>
-
+                           <li><a href="descent">Descent</a></li>
                       </ul>
                    </li>
                       <li><a href="summary">Summary :: Insight</a></li>
@@ -49,60 +48,46 @@
             </nav>
 
 
-            <!-- </div>
-            <div class="container">
-                <div class="col-md-12">
-                    <div class="sigline">
+<!-- DATA VISUALIZATION FOR GENDER -->
+                  <div class="container">
+                        <div class="row row-grid">
+                            <div class="col-md-8">
+                                <div class="box box-left">
+                                <section id="intro">
+                                    <h5>Victim Age Visualization</h5>
 
-                    </div>
-                </div>
-            </div>
-        </nav> -->
+                                        <div id="agePlot"></div>
 
-          <div class="container">
-                <div class="row row-grid">
-                    <div class="col-md-8">
-                        <div class="box box-left">
-                        <section id="intro">
-                            <h5>Victim Age Visualization</h5>
-                            <div id="agePlot"></div>
-                                <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-                                <script src="../static/js/plot_age.js"></script>
-
-                            <!-- <section id="summary"> -->
-                            <p>This is the visualization for: Age.
-                            </p>
-
-                            </section>
-                        <!-- </section> -->
-                        </div>
-                    </div>
-
+                                        <script src="../static/js/plot_age.js"></script>
+                                  <p>This is the visualization for: Age.
+                                  </p>
+                                  </section>
+                                <!-- </section> -->
+                                </div>
+                            </div>
 <!-- MATRIX OF THUMBNAILS THAT CLICK INTO HTML VISUALIZATION PAGES -->
-                    <div class="col-md-4">
-                        <div class="box box-right">
-                        <h2>Visualizations</h2>
-                        <hr>
-                        <div class="row" >
-                          <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6"><a href="age"><img class = "img img-responsive" src="../static/assets/age.png" style="width:100%" alt=""></a></div>
-                          <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6"><a href="gender"><img class = "img img-responsive" src="../static/assets/gender.png" style="width:100%" alt=""></a></div>
-                        </div>
-                        <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6"><a href="year"><img class = "img img-responsive" src="../static/assets/year.png" style="width:100%" alt=""></a></div>
-                        <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6"><a href="time"><img class = "img img-responsive" src="../static/assets/time.png" style="width:100%" alt=""></a></div>
-                        </div>
-                        </div>
-                      </div>
+                            <div class="col-md-4">
+                                <div class="box box-right">
+                                <h2>Visualizations</h2>
+                                <hr>
+                                <div class="row" >
+                                  <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6"><a href="age"><img class = "img img-responsive" src="../static/assets/age.png" style="width:100%" alt=""></a></div>
+                                  <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6"><a href="gender"><img class = "img img-responsive" src="../static/assets/gender.png" style="width:100%" alt=""></a></div>
+                                </div>
+                                <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6"><a href="year"><img class = "img img-responsive" src="../static/assets/year.png" style="width:100%" alt=""></a></div>
+                                <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6"><a href="descent"><img class = "img img-responsive" src="../static/assets/descent.png" style="width:100%" alt=""></a></div>
+                                </div>
+                                </div>
+                              </div>
 
 
-        <script
-        src="https://code.jquery.com/jquery-3.2.1.js"
-        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-        crossorigin="anonymous"></script>
+            <script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
 
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
-        </script>
-
-
-    </body>
-    </html>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+            </script>
+            </body>
+            </html>
