@@ -49,84 +49,96 @@
           <div class="col-md-8">
               <div class="box box-left">
               <section id="intro">
-        <h4>Logic of Analysis</h4>
+        <h4>Logic of Analysis</h4><br></br><br></br>
         <br>
-        <h8>Toolkit:</h8>
-            <p>》   Python, Flask, Restful API, HTML/CSS, Javascript</p>
-            <p>》   MySQL, D3, Leaflet.js</p>
-        <h8> This was our process:</h8>
-        <p>》   The following table includes all of the data used for plotting during this project.</p>
-        <p>》   The following table includes all of the data used for plotting during this project.</p>
-        <h8> This is what we found:</h8>
-        <p>》   Findings were interesting beacuase.</p>
-        <p>》   The following table includes all of the data used for plotting during this project.</p>
-        <p>》   The following table includes all of the data used for plotting during this project.</p>
+        <h8>our toolkit:</h8>
+            <br></br>
+            <p> 》Python, Flask, Restful API, HTML/CSS, Plotly</p>
+            <p>》Javascript, NPM, MySQL, D3, Leaflet.js. </p>
+        <h8> our data source:</h8><br></br>
+        <p><a href=https://data.lacity.org/A-Safe-City/Traffic-Collision-Data-from-2010-to-Present/d5tf-ez2w>》"Traffic Collision Data from 2010 to Present" from the City of Los Angeles Data Catalog.</a></p>
+        <p>》Data Owner: LAPD</p>
+        <p>》Refresh Rate: Weekly</p>
+        <h8>our lessons:</h8><br></br>
+        <p> 》Public/raw datasets must be thoughoughly cleaned before using.</p>
+        <p>》Leaflet.js is sensitive with the source format for Latitude and Longitude in the database. </p>
+        <br></br>
+        <br></br>
+        <br></br>
+
       </div>
     </section>
     </div>
 
 
+    <div class="col-md-4">
+      <div class="box box-right">
+  <h9>I.</h9>
+  <h4>Clean the Data.</h4><br></br>
+  <h8>We renamed columns, removed appropriate null values, removed lat/longs of 0.</h8><br></br>
+  <h9>II. </h9>
+  <h4>Analyze with D3 + Plotly + Leaflet.js</h4>
+  <h8>We loaded in the API from the data source for a GeoJSON. Then we constructed a Heatmap with Leaflet.js, to illustrate the most populated reported traffic collisions. In addition to the Heatmap, we included an interactive Leaflet.js mapping of the collision sites with markers that that pop-up, with relevant details on that specific incident, when clicked. For the Plotly + D3 portion of this project, we explored 4 main subsets in the data: victim age, victim descent, victim gender and frequency of incidents/year.</h8><br></br>
+  <h9>III. </h9>
+  <h4>Structure Flask Routes for Web Hosting</h4>
+  <h8>We first set up a shared repo to ensure everyone has access to all updates and changes. Then, we defined the table structure before importing the data. With the Flask routes, we have set "/" as our INDEX or landing page. You will be able to navagate through the site via the NavBar as well as the many other interactive features provided.</h8><br></br>
+  <h9>IV. </h9>
+  <h4>Load and Run</h4>
+  <h8>This last step is always the most exciting, as you can see.
+  <br>
+</div>
 
-          <div class="col-md-4">
-            <div class="box box-right">
-        <h9>I.</h9>
-        <h5>Stage One - Cleanse</h5>
-        <h9>II. </h9>
-        <h5>Stage Two - Analyze</h5>
-        <h9>III. </h9>
-        <h5>Stage Three - Visualize</h5>
-        <h9>IV. </h9>
-        <br>
-        <h8>Stage Four - Web</h8>
-
-      </div>
-     </div>
+</div>
+</div>
+</div>
+<div class="container">
+      <div class="row row-grid">
+          <div class="box box-left">
+          <div class="col-md-12">
+            <br><h5>Columns in this Dataset</h5>
+                    <hr>
+                    <h3>DR NUMBER:</h3><h8>Data Type (Text), API Field Name (dr_no)</h8>
+                    <p>Division of Records Number: Official file number made up of a 2 digit year, area ID, and 5 digits.</p>
+                        <h3>DATE REPORTED:</h3><h8>Data Type(Floating Timestamp), API Field Name(date_rptd)</h8>
+                        <p>MM/DD/YYYY</p>
+            <h3>DATE OCCURRED:</h3><h8>Data Type(Floating Timestamp), API Field Name(date_occ)</h8>
+            <p>MM/DD/YYYY</p>
+                        <h3>TIME OCCURRED:</h3><h8>Data Type (Text), API Field Name (time_occ)</h8>
+                        <p>In 24 hour military time.</p>
+            <h3>AREA ID:</h3><h8>Data Type (Text), API Field Name (area)</h8>
+            <p>The LAPD has 21 Community Police Stations referred to as Geographic Areas within the department. These Geographic Areas are sequentially numbered from 1-21.</p>
+                        <h3>AREA NAME:</h3><h8>Data Type (Text), API Field Name (area_name)</h8>
+                        <p>The 21 Geographic Areas or Patrol Divisions are also given a name designation that references a landmark or the surrounding community that it is responsible for. For example 77th Street Division is located at the intersection of South Broadway and 77th Street, serving neighborhoods in South Los Angeles.</p>
+                                <h3>REPORTING DISTRICT:</h3><h8>Data Type (Text), API Field Name (rpt_dist_no)</h8>
+                                <p>A code used in producing reports to group data into geographic sub-areas within an area. Find LAPD Reporting Districts on the LA City GeoHub.</p>
+                            <h3>CRIME CODE:</h3><h8>Data Type (Text), API Field Name (crm_cd)</h8>
+                            <p>Indicates the crime committed. For this dataset - all Crime Code 997.</p>
+                                      <h3>CRIME CODE DESCRIPTION:</h3><h8>Data Type (Text), API Field Name (crm_cd_desc)</h8>
+                                      <p>Defines the Crime Code provided. For this dataset - all Traffic Collision.</p>
+                                <h3>MO CODES:</h3><h8>Data Type (Text), API Field Name (mocodes)</h8>
+                                <p>Modus Operandi: Activities associated with the suspect in commission of the crime. See attached PDF for list of MO Codes in numerical order.</p>
+                                              <h3>VICTIM AGE:</h3><h8>Data Type (Text), API Field Name (vict_age)</h8>
+                                              <p>Two character numeric.</p>
+                                                  <h3>VICTIM SEX:</h3><h8>Data Type (Text), API Field Name (vict_sex)</h8>
+                                                  <p>F - Female M - Male X - Unknown</p>
+                                              <h3>VICTIM DESCENT:</h3><h8>Data Type (Text), API Field Name (vict_descent)</h8>
+                                              <p>Descent Code: A - Other Asian B - Black C - Chinese D - Cambodian F - Filipino G - Guamanian H - Hispanic/Latin/Mexican I - American Indian/Alaskan Native J - Japanese K - Korean L - Laotian O - Other P - Pacific Islander S - Samoan U - Hawaiian V - Vietnamese W - White X - Unknown Z - Asian Indian</p>
+                                                        <h3>PREMISE CODE:</h3><h8>Data Type (Text), API Field Name (premis_cd)</h8>
+                                                        <p>The type of structure or location where the incident took place.</p>
+                                                                <h3>PREMISE DESCRIPTION:</h3><h8>Data Type (Text), API Field Name (premis_desc)</h8>
+                                                                <p>A code used in producing reports to group data into geographic sub-areas within an area. Find LAPD Reporting Districts on the LA City GeoHub.</p>
+                                                      <h3>ADDRESS:</h3><h8>Data Type (Text), API Field Name (location)</h8>
+                                                      <p>Street address of crime incident rounded to the nearest hundred block to maintain anonymity.</p>
+                                                                <h3>CROSS STREET:</h3><h8>Data Type (Text), API Field Name (cross_street)</h8>
+                                                                <p>Cross Street of rounded Address.</p>
+                                                                        <h3>LOCATION:</h3><h8>Data Type (Location), API Field Name (location_1)</h8>
+                                                                        <p>The location where the crime incident occurred. Actual address is omitted for confidentiality. XY coordinates reflect the nearest 100 block.</p>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
   </div>
 </div>
-    <div class="container">
-          <div class="row row-grid">
-              <div class="col-md-12">
-                <br><h5>Columns in this Dataset</h5>
-                        <hr>
-                        <h3>DR NUMBER:</h3><h8>Data Type (Text), API Field Name (dr_no)</h8>
-                        <p>Division of Records Number: Official file number made up of a 2 digit year, area ID, and 5 digits.</p>
-                            <h3>DATE REPORTED:</h3><h8>Data Type(Floating Timestamp), API Field Name(date_rptd)</h8>
-                            <p>MM/DD/YYYY</p>
-                <h3>DATE OCCURRED:</h3><h8>Data Type(Floating Timestamp), API Field Name(date_occ)</h8>
-                <p>MM/DD/YYYY</p>
-                            <h3>TIME OCCURRED:</h3><h8>Data Type (Text), API Field Name (time_occ)</h8>
-                            <p>In 24 hour military time.</p>
-                <h3>AREA ID:</h3><h8>Data Type (Text), API Field Name (area)</h8>
-                <p>The LAPD has 21 Community Police Stations referred to as Geographic Areas within the department. These Geographic Areas are sequentially numbered from 1-21.</p>
-                            <h3>AREA NAME:</h3><h8>Data Type (Text), API Field Name (area_name)</h8>
-                            <p>The 21 Geographic Areas or Patrol Divisions are also given a name designation that references a landmark or the surrounding community that it is responsible for. For example 77th Street Division is located at the intersection of South Broadway and 77th Street, serving neighborhoods in South Los Angeles.</p>
-                                    <h3>REPORTING DISTRICT:</h3><h8>Data Type (Text), API Field Name (rpt_dist_no)</h8>
-                                    <p>A code used in producing reports to group data into geographic sub-areas within an area. Find LAPD Reporting Districts on the LA City GeoHub.</p>
-                                <h3>CRIME CODE:</h3><h8>Data Type (Text), API Field Name (crm_cd)</h8>
-                                <p>Indicates the crime committed. For this dataset - all Crime Code 997.</p>
-                                          <h3>CRIME CODE DESCRIPTION:</h3><h8>Data Type (Text), API Field Name (crm_cd_desc)</h8>
-                                          <p>Defines the Crime Code provided. For this dataset - all Traffic Collision.</p>
-                                    <h3>MO CODES:</h3><h8>Data Type (Text), API Field Name (mocodes)</h8>
-                                    <p>Modus Operandi: Activities associated with the suspect in commission of the crime. See attached PDF for list of MO Codes in numerical order.</p>
-                                                  <h3>VICTIM AGE:</h3><h8>Data Type (Text), API Field Name (vict_age)</h8>
-                                                  <p>Two character numeric.</p>
-                                                      <h3>VICTIM SEX:</h3><h8>Data Type (Text), API Field Name (vict_sex)</h8>
-                                                      <p>F - Female M - Male X - Unknown</p>
-                                                  <h3>VICTIM DESCENT:</h3><h8>Data Type (Text), API Field Name (vict_descent)</h8>
-                                                  <p>Descent Code: A - Other Asian B - Black C - Chinese D - Cambodian F - Filipino G - Guamanian H - Hispanic/Latin/Mexican I - American Indian/Alaskan Native J - Japanese K - Korean L - Laotian O - Other P - Pacific Islander S - Samoan U - Hawaiian V - Vietnamese W - White X - Unknown Z - Asian Indian</p>
-                                                            <h3>PREMISE CODE:</h3><h8>Data Type (Text), API Field Name (premis_cd)</h8>
-                                                            <p>The type of structure or location where the incident took place.</p>
-                                                                    <h3>PREMISE DESCRIPTION:</h3><h8>Data Type (Text), API Field Name (premis_desc)</h8>
-                                                                    <p>A code used in producing reports to group data into geographic sub-areas within an area. Find LAPD Reporting Districts on the LA City GeoHub.</p>
-                                                          <h3>ADDRESS:</h3><h8>Data Type (Text), API Field Name (location)</h8>
-                                                          <p>Street address of crime incident rounded to the nearest hundred block to maintain anonymity.</p>
-                                                                    <h3>CROSS STREET:</h3><h8>Data Type (Text), API Field Name (cross_street)</h8>
-                                                                    <p>Cross Street of rounded Address.</p>
-                                                                            <h3>LOCATION:</h3><h8>Data Type (Location), API Field Name (location_1)</h8>
-                                                                            <p>The location where the crime incident occurred. Actual address is omitted for confidentiality. XY coordinates reflect the nearest 100 block.</p>
-
-
-
 
       </body>
 

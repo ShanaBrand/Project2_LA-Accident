@@ -30,8 +30,8 @@ body {
 
 .line {
   fill: none;
-  stroke: orange;
-  stroke-width: 2px;
+  stroke: white;
+  stroke-width: .75px;
 }
 
 
@@ -100,13 +100,14 @@ img {
 /*PARAGRAPH TEXT, DARK, PADDING OPTIONS*/
 p {color:#242a2e;
    font-family: serif;
-   font-size: 25PX;
+   font-size: 20PX;
    text-align: left;
    font-style: italic;
    padding-right: 22px;
    padding-left: 4px;
    padding-bottom: 4px;
    padding-top:4px;
+   opacity: .88;
 }
 /*BACKGROUND COLOR IS PALE PINK */
   /* #3b3b3b; */
@@ -265,6 +266,7 @@ h8 {
      padding-left: 0px;
      padding-bottom: 30px;
      padding-top:0px;
+     opacity:.6;
 }
 /*COLOR IS LIGHT LIGHT MUTED PINK */
 /*FEATURED AS ACCENT, ON DATA PROCESS PAGE*/
