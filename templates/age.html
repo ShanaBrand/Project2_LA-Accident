@@ -4,10 +4,14 @@
 <!-- PAGE TITLE -->
 <head>
   <meta charset="UTF-8">
-    <title>Age</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Descent Visualization</title>
+    <!-- <title>Age</title> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
       <link rel="stylesheet" href="../static/css/style.css">
+      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+      <script src="../static/js/ethnicityPlot.js"></script>
 </head>
 
 <!-- NAVBAR, NAVBAR BUTTON ON HEADER, CONTAINER-FLUID -->
@@ -59,18 +63,17 @@
                     <div class="col-md-8">
                         <div class="box box-left">
                         <section id="intro">
-                            <h5>Age</h5>
-                            <hr>
-                            <figure>
-                                <a target="_blank" href="../static/assets/age.png">
-                                <img id="viz-main" src="../static/assets/age.png" alt="vs. Age" width="95%" height="95%">
-                                </a>
-                            </figure>
-                            <section id="summary">
+                            <h5>Victim "Descent" Visualization</h5>
+                            <div id="plot"></div>
+                                <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                                <script src="../static/js/ethnicityPlot.js"></script>
+
+                            <!-- <section id="summary"> -->
                             <p>This is the visualization for: Age.
                             </p>
+
                             </section>
-                        </section>
+                        <!-- </section> -->
                         </div>
                     </div>
 
@@ -80,12 +83,12 @@
                         <h2>Visualizations</h2>
                         <hr>
                         <div class="row" >
-                          <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6"><a href="age.html"><img class = "img img-responsive" src="../static/assets/age.png" style="width:100%" alt=""></a></div>
-                          <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6"><a href="gender.html"><img class = "img img-responsive" src="../static/assets/gender.png" style="width:100%" alt=""></a></div>
+                          <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6"><a href="age"><img class = "img img-responsive" src="../static/assets/age.png" style="width:100%" alt=""></a></div>
+                          <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6"><a href="gender"><img class = "img img-responsive" src="../static/assets/gender.png" style="width:100%" alt=""></a></div>
                         </div>
                         <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6"><a href="year.html"><img class = "img img-responsive" src="../static/assets/year.png" style="width:100%" alt=""></a></div>
-                        <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6"><a href="time.html"><img class = "img img-responsive" src="../static/assets/time.png" style="width:100%" alt=""></a></div>
+                        <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6"><a href="year"><img class = "img img-responsive" src="../static/assets/year.png" style="width:100%" alt=""></a></div>
+                        <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6"><a href="time"><img class = "img img-responsive" src="../static/assets/time.png" style="width:100%" alt=""></a></div>
                         </div>
                         </div>
                       </div>

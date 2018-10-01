@@ -4,10 +4,16 @@
 <!-- PAGE TITLE -->
 <head>
   <meta charset="UTF-8">
-    <title>Age</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Gender Visualization</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- <title>Age</title> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
-      <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="../static/js/piePlot.js"></script>
+                                            <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
 </head>
 
 <!-- NAVBAR, NAVBAR BUTTON ON HEADER, CONTAINER-FLUID -->
@@ -50,18 +56,15 @@
                             <div class="col-md-8">
                                 <div class="box box-left">
                                 <section id="intro">
-                                    <h5>Gender</h5>
-                                    <hr>
-                                    <figure>
-                                        <a target="_blank" href="../static/assets/gender.png">
-                                        <img id="viz-main" src="../static/assets/gender.png" alt="vs. Age" width="95%" height="95%">
-                                        </a>
-                                    </figure>
-                                    <section id="summary">
-                                    <p>This is the visualization for: Gender.
-                                    </p>
-                                    </section>
-                                </section>
+                                    <h5>Victim Gender Visualization</h5>
+
+                                        <div id="pie"></div>
+
+                                        <script src="../static/js/piePlot.js"></script>
+                                  <p>This is the visualization for: Gender.
+                                  </p>
+                                  </section>
+                                <!-- </section> -->
                                 </div>
                             </div>
 <!-- MATRIX OF THUMBNAILS THAT CLICK INTO HTML VISUALIZATION PAGES -->
