@@ -1,5 +1,3 @@
-import os
-from dotenv import load_dotenv
 from flask import Flask
 from flask import jsonify
 from flask import request
@@ -11,6 +9,7 @@ from sqlalchemy import Column, Integer, String, Float, Enum, DateTime, ForeignKe
 from sqlalchemy.orm.exc import NoResultFound
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
+from sqlalchemy import text
 import pymysql
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -19,11 +18,11 @@ Base = declarative_base()
 pymysql.install_as_MySQLdb()
 
 # Database Connection
-username = os.getenv("DATABASE_USERNAME")
-password = os.getenv("DATABASE_PASSWORD")
-host = os.getenv("DATABASE_HOST")
-port = os.getenv("DATABASE_PORT")
-database = os.getenv("DATABASE_NAME")
+username = 'root'
+password = 'root'
+host = 'localhost'
+port = 3306
+database = 'la_collisions_db'
 
 # Format:
 # `<Dialect>://<Username>:<Password>@<Host Address>:<Port>/<Database>`
@@ -74,9 +73,7 @@ class Accident(Base):
                 'latitude': self.latitude,
                 'longitude': self.longitude,
             }
-            # 'links': {
-            #     'self': url_for('api_all_accidents', id=self.dr_number, _external=True)
-            # }
+
         }
 
 from flask import Flask
@@ -86,6 +83,10 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/visuals')
+def myVisuals():
+    return render_template('chart.html')  
 
 @app.route('/home')
 def home():
@@ -111,20 +112,15 @@ def leaflet():
 def summary():
     return render_template('summary.html')
 
-@app.route("/time")
+@app.route("/descent")
 def time():
-    return render_template('time.html')
+    return render_template('descent.html')
 
 @app.route("/year")
 def year():
     return render_template('year.html')
 
-# @app.route('/sightings/<int:id>', methods=['GET'])
-# def get_sightings(id):
-#     return render_template('one_sighting.html')
-
-# Warning! This generates a huge response!!!
-# TODO: can we drop the pins via pagination?
+# Warning! This generates a huge response!
 @app.route("/api/accidents")
 def all_accidents():
     accidents = session.query(Accident)
@@ -135,28 +131,78 @@ def all_accidents():
         }
 
     )
-
-@app.route("/api/accidents/2018")
-def accidents2018():
-    accidents2018 = session.query(Accident).filter(Accident.year_occur == 2018)
-    return jsonify(
-        data=[a.serialize for a in accidents2018],
-        links={
-            'self': str(request.url_rule)
-        }
-
-    )
-
-# @app.route("/api/accidents/<int:id>")
-# def api_one_accident():
-#     accidents = session.query(Accident)
+#data from only 2018
+# @app.route("/api/accidents/2018")
+# def accidents2018():
+#     accidents2018 = session.query(Accident).filter(Accident.year_occur == 2018)
 #     return jsonify(
-#         data=[a.serialize for a in accidents],
+#         data=[a.serialize for a in accidents2018],
 #         links={
 #             'self': str(request.url_rule)
 #         }
-
 #     )
+
+#data by year
+@app.route("/years")
+def yearsdata():
+    mYears =[r.year_occur for r in session.query(Accident.year_occur).distinct()]
+    return jsonify(mYears)
+
+
+#Routes for PLOTLY VISUALS --do not need to display
+@app.route("/accidents/byYear")
+def accidentsSum():
+    results = []
+    yrlSum = conn.execute(text('SELECT year_occur, COUNT(*) as NumAccidents FROM traffic_tbl GROUP BY year_occur ORDER BY year_occur DESC'))
+    print('yrlsum:', yrlSum)
+    for row in yrlSum:
+        print(row)
+        results.append([row[0], row[1]])
+    print('results', results)
+    format_results = [{"year_occur":row[0],"num_accidents":row[1]}for row in results]
+    return jsonify(format_results)
+  
+
+#data by area
+@app.route("/accidents/byArea")
+def accidentbyArea():
+    results = []
+    area_sum = conn.execute(text('SELECT area_name,COUNT(*) as num_accidents FROM traffic_tbl GROUP BY area_name ORDER BY num_accidents DESC'))
+    print('area_sum:', area_sum)
+    for row in area_sum:
+        print(row)
+        results.append([row[0], row[1]])
+    print('results', results)
+    format_results = [{"area_name":row[0],"num_accidents":row[1]}for row in results]
+    return jsonify(format_results)
+  
+#data by descent 
+@app.route("/accidents/byDescent")
+def accidentbyDes():
+    results = []
+    descent_sum = conn.execute(text('SELECT victim_descent,COUNT(*) as num_accidents FROM traffic_tbl GROUP BY victim_descent ORDER BY num_accidents DESC'))
+    print('victim_descent:', descent_sum)
+    for row in descent_sum:
+        print(row)
+        results.append([row[0], row[1]])
+    print('results', results)
+    format_results = [{"victim_descent":row[0],"num_accidents":row[1]}for row in results]
+    return jsonify(format_results)
+  
+    # return jsonify(json_list = area_sum)
+
+#data by gender 
+@app.route("/accidents/bySex")
+def accidentbySex():
+    results = []
+    v_sex = conn.execute(text('SELECT victim_sex,COUNT(*) as num_accidents FROM traffic_tbl GROUP BY victim_sex ORDER BY num_accidents DESC'))
+    print('victim_sex:', v_sex)
+    for row in v_sex:
+        print(row)
+        results.append([row[0], row[1]])
+    print('results', results)
+    format_results = [{"victim_sex":row[0],"num_accidents":row[1]}for row in results]
+    return jsonify(format_results)
 
 
 if __name__ == "__main__":
