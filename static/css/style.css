@@ -1,8 +1,9 @@
 /*
 
 /*COLOR IS PALE BLUE*/
+/* #b7d6e7 */
 body {
-    background-color:#b7d6e7;
+    background-color: #0e68ce;
     font-family: serif;
     font-size: 10PX;
     /* font-weight:bold; */
@@ -74,8 +75,9 @@ li {
 }
 /*ALT COLOR: #dfdfdf */
 /*COLOR IS PALE YELLOW*/
+/* #f4ea8e */
 section {
-    background-color:#f4ea8e;
+    background-color:#f5f5f5;
     font-family: serif;
     padding-top: 100px;
     padding-right: 30px;
@@ -110,9 +112,9 @@ p {color:#242a2e;
   /* #3b3b3b; */
   /* d690b2 */
 .container {
-  background-color:	#d690b2;
+  background-color:	#D71F5A;
   /* white */
-  font-family: sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: 12;
   text-align: left;
   /* padding-top: 22px;
@@ -128,12 +130,15 @@ p {color:#242a2e;
 }
 
 /*BUTTON OPTIONS*/
+/* #b7d6e7; */
+/* #242a2e; */
 .btn-info {
-    color: #242a2e;
-    background-color: #b7d6e7;
+    color: #f5f5f5;
+    background-color:#aaa;
     border-color: #fff;
     font-size:20PX;
     font-weight:bolder;
+    font: 400 14px system-ui;
     text-align: right;
     padding-top: 25px;
     padding-right: 25px;
@@ -144,9 +149,10 @@ p {color:#242a2e;
 }
 /*WHEN YOU HOVER OVER IT WITH MOUSE, IT TURNS THIS COLOR */
 /*YELLOW, DARK TEXT, WHITE BORDER*/
+/* #f4ea8e; */
 .btn-info:hover {
-    color: #242a2e;
-    background-color: #f4ea8e;
+    color:  #f5f5f5;
+    background-color: #95cc21;
     border-color: #fff;
     BORDER-WIDTH: THICK;
 }
@@ -160,7 +166,7 @@ p {color:#242a2e;
 /*NAVBAR BACKGROUND COLOR, ACCENT COLOR WHEN CLICK*/
 .navbar-default .navbar-brand {
     color: #eeeeed;
-    background-color:#d690b2;
+    background-color:#D71F5A;
     font-weight: bold;
     text-align: left;
     font-family: sans-serif;
@@ -171,14 +177,8 @@ p {color:#242a2e;
     background-color: white;
 }
 /*NAVBAR FOR COLOR OF FONT */
-.navbar-default .navbar-brand {
-    color: #eeeeed;
-    background-color:#d690b2;
-    font-weight: bold;
-    text-align: left;
-    font-family: sans-serif;
-    font-size: 20PX;
-}
+/* #d690b2 */
+
 /*SPECIAL HEADERS FOR VARIOUS EFFECTS */
 /*COLOR IS PALE PINK*/
 h1 {
@@ -191,7 +191,7 @@ h1 {
 }
 /*COLOR IS LIGHTER PALE BLUE*/
 h2 {
-      color: 	#dbeaf3;
+      color: 	#f5f5f5;
       font-family: sans-serif;
       font-weight: bold;
       text-align: left;
@@ -200,9 +200,10 @@ h2 {
 }
 /*THIS CONTROLS FONT AND COLOR OF TEXT ON HOME + CHARTS IN SUMMARY*/
 /*BACKGROUND COLOR IS PALE BLUE, DARK FONT, LIGHTER OPACITY*/
+/* #b7d6e7 */
 h3 {
      color: #242a2e;
-     background-color: #b7d6e7;
+     background-color: #f5f5f5;
      /*YELLOW: background-color: #ffffe1; */
      font-family: serif;
      font-weight: bold;
@@ -218,7 +219,7 @@ h3 {
 }
 /* COLOR IS LIGHT LIGHT GREY */
 h4 {
-     color: #eeeeed;
+     color: #433e46;
      /* #fef7bb; */
      font-family: sans-serif;
      font-weight: bold;
@@ -236,7 +237,7 @@ h5 {
 }
 /*COLOR IS SALMON*/
 h6 {
-     color: #ffa7a7;
+     color: #aaa;
      /* #fef7bb; */
      font-family: sans-serif;
      font-weight: bold;

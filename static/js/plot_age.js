@@ -20,6 +20,8 @@ var data = [trace1];
   // Apply the group bar mode to the layout
   var layout = {
     title: "Victim Age",
+    xaxis: { title: "Age" },
+    yaxis: { title: "Number of Incidents" },
     margin: {
       l: 100,
       r: 100,

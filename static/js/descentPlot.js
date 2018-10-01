@@ -17,6 +17,8 @@ data = data.reverse();
   // Apply the group bar mode to the layout
   var layout = {
     title: "Victim Descent",
+    xaxis: { title: "Number of Incidents" },
+    yaxis: { title: "Descent" },
     margin: {
       l: 100,
       r: 100,
@@ -24,6 +26,5 @@ data = data.reverse();
       b: 100
     }
   };
-
   // Render the plot to the div tag with id "plot"
   Plotly.newPlot("plot", data, layout);
