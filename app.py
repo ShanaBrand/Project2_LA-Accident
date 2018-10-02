@@ -21,7 +21,7 @@ pymysql.install_as_MySQLdb()
 
 # Database Connection
 username = 'root'
-password = 'root'
+password = 'mtzion77!'
 host = 'localhost'
 port = 3306
 database = 'la_collisions_db'

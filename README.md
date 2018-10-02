@@ -11,4 +11,4 @@ The website includes several pages with visualizations built from d3, plotly, an
 **How to Deploy Using Flask**
 1. Clone the full repo. 
 2. Run the parse_csv.py file. Ensure you have a MySQL server active and add your local credentials to the file before running. 
-3. After the database is created, update your local credentials on the app.py file before running it to host the site locally. 
+3. After the database is created, update your local credentials on the app.py file before running it to host the site locally.       

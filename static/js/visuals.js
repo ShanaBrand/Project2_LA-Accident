@@ -1,7 +1,7 @@
 console.log("Welcome to our Dashboard, We are getting data from MYSQL  database and generating Javascript Plotly!!");
 
 function yearlyChart(){
- d3.json(`/accidents/byYear`).then((data) => {
+ d3.json("/accidents/byYear").then((data) => {
   const year_occur = data.year_occur;
   const num_acc = data.num_accidents;
   const col_id = [120,125,130,135,140,145,150,155]
@@ -29,7 +29,7 @@ function yearlyChart(){
 
 
 function sexChart(){
- d3.json(`/accidents/bySex`).then((data) => {
+ d3.json("/accidents/bySex").then((data) => {
   const victim_sex = data.victim_sex;
   const num_acc = data.num_accidents;
 
@@ -50,7 +50,7 @@ function sexChart(){
 
 
 function areaChart(){
- d3.json(`/accidents/byArea`).then((data) => {
+ d3.json("/accidents/byArea").then((data) => {
   const area_name = data.area_name;
   const num_acc = data.num_accidents;
 
@@ -77,7 +77,7 @@ function areaChart(){
 
 
 function ageChart(){
- d3.json(`/accidents/byAge`).then((data) => {
+ d3.json("/accidents/byAge").then((data) => {
   const age = data.victim_age;
   const num_acc = data.num_accidents;
 
@@ -103,25 +103,25 @@ function ageChart(){
 }
 
 function descentChart(){
- d3.json(`/accidents/byDescent`).then((data) => {
-  const descent = data.victim_descent;
-  const num_acc = data.num_accidents;
-
-  var layout = {
-   margin:{t:0},
-   hovermode:"closest",
-   xaxis:{title:"Victim’s Descent"}, 
-   yaxis:{title:"Number of Accidents"}
-  };
-  var data = [{
-   x: descent,
-   y: num_acc, 
-   type: 'bar',
-   text: x,
-   mode: 'lines'
- }];
- Plotly.newPlot("line", data, layout);
-});
+ d3.json("/accidents/byDescent").then((data) => {
+   const descent = data.victim_descent;
+   const num_acc = data.num_accidents;
+   
+   var layout = {
+      margin:{t:0},
+      hovermode:"closest",
+      xaxis:{title:"Victim’s Descent"}, 
+      yaxis:{title:"Number of Accidents"}
+   };
+   var data = [{
+     x: descent,
+     y: num_acc, 
+     type: 'bar',
+     text: x,
+     //mode: 'lines'
+    }];
+    Plotly.newPlot("line", data, layout);
+  });
 }
 
 
