@@ -12,6 +12,8 @@ from sqlalchemy import create_engine
 from sqlalchemy import text
 import pymysql
 from sqlalchemy.ext.declarative import declarative_base
+import numpy as np
+import time
 
 Base = declarative_base()
 
@@ -29,10 +31,22 @@ database = 'la_collisions_db'
 # Using f-string notation: https://docs.python.org/3/reference/lexical_analysis.html#f-strings
 connection = f"mysql://{username}:{password}@{host}:{port}/{database}"
 
-
-engine = create_engine(connection)
+engine = create_engine(connection, pool_recycle=1)
+#engine = create_engine(connection)
 conn = engine.connect()
 session = Session(bind=engine)
+
+
+# query = 'SELECT NOW();'
+
+# while True:
+#     print('Q1', engine.execute(query).fetchall())
+#     engine.execute('SET wait_timeout=2')
+#     time.sleep(3)
+#     print('Q2', engine.execute(query).fetchall())
+
+# inspector = inspect(engine)
+
 
 app = Flask(__name__, static_folder='./static', static_url_path='')
 
@@ -49,6 +63,9 @@ class Accident(Base):
     victim_descent = Column(VARCHAR(6))
     latitude = Column(Float)
     longitude = Column(Float)
+    area_name = Column(VARCHAR(50))
+    intersection = Column(VARCHAR(100))
+
 
 
     @property
@@ -72,8 +89,12 @@ class Accident(Base):
                 'victim_descent': self.victim_descent,
                 'latitude': self.latitude,
                 'longitude': self.longitude,
+                'area_name':self.area_name,
+                'intersection':self.intersection
             }
-
+            # 'links': {
+            #     'self': url_for('api_all_accidents', id=self.dr_number, _external=True)
+            # }
         }
 
 from flask import Flask
@@ -84,9 +105,9 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/visuals')
-def myVisuals():
-    return render_template('chart.html')  
+@app.route("/dashboard_visuals")    
+def dashboard():
+    return render_template('chart_visuals.html') 
 
 @app.route('/home')
 def home():
@@ -120,7 +141,16 @@ def time():
 def year():
     return render_template('year.html')
 
-# Warning! This generates a huge response!
+# @app.route("/dashboard_visuals")    
+# def dashboard():
+#     return render_template('chart_visuals.html')
+
+# @app.route('/sightings/<int:id>', methods=['GET'])
+# def get_sightings(id):
+#     return render_template('one_sighting.html')
+
+# Warning! This generates a huge response!!!
+# TODO: can we drop the pins via pagination?
 @app.route("/api/accidents")
 def all_accidents():
     accidents = session.query(Accident)
@@ -131,18 +161,17 @@ def all_accidents():
         }
 
     )
-#data from only 2018
-# @app.route("/api/accidents/2018")
-# def accidents2018():
-#     accidents2018 = session.query(Accident).filter(Accident.year_occur == 2018)
-#     return jsonify(
-#         data=[a.serialize for a in accidents2018],
-#         links={
-#             'self': str(request.url_rule)
-#         }
-#     )
 
-#data by year
+@app.route("/accidents/2018")
+def accidentsbyYear():
+    accidentsbyYear = session.query(Accident).filter(Accident.year_occur == 2018)
+    return jsonify(
+        data=[a.serialize for a in accidentsbyYear],
+        links={
+            'self': str(request.url_rule)
+        }
+
+    )
 @app.route("/years")
 def yearsdata():
     mYears =[r.year_occur for r in session.query(Accident.year_occur).distinct()]
@@ -153,6 +182,7 @@ def yearsdata():
 @app.route("/accidents/byYear")
 def accidentsSum():
     results = []
+    format_results = []
     yrlSum = conn.execute(text('SELECT year_occur, COUNT(*) as NumAccidents FROM traffic_tbl GROUP BY year_occur ORDER BY year_occur DESC'))
     print('yrlsum:', yrlSum)
     for row in yrlSum:
@@ -163,7 +193,7 @@ def accidentsSum():
     return jsonify(format_results)
   
 
-#data by area
+    
 @app.route("/accidents/byArea")
 def accidentbyArea():
     results = []
@@ -176,7 +206,7 @@ def accidentbyArea():
     format_results = [{"area_name":row[0],"num_accidents":row[1]}for row in results]
     return jsonify(format_results)
   
-#data by descent 
+
 @app.route("/accidents/byDescent")
 def accidentbyDes():
     results = []
@@ -191,7 +221,6 @@ def accidentbyDes():
   
     # return jsonify(json_list = area_sum)
 
-#data by gender 
 @app.route("/accidents/bySex")
 def accidentbySex():
     results = []
@@ -203,6 +232,8 @@ def accidentbySex():
     print('results', results)
     format_results = [{"victim_sex":row[0],"num_accidents":row[1]}for row in results]
     return jsonify(format_results)
+
+
 
 
 if __name__ == "__main__":

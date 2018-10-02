@@ -2,7 +2,10 @@
 import csv
 import pymysql
 import datetime
-# Connect to the database
+
+import os
+
+#Connect to the database
 mydb = pymysql.connect(host='localhost',
                              user='root',
                              password='root',
@@ -12,7 +15,7 @@ mydb = pymysql.connect(host='localhost',
 
 # Establish cursor
 cursor = mydb.cursor()
-cursor.execute('DROP TABLE IF EXISTS traffic_tbl')
+# cursor.execute('DROP TABLE IF EXISTS traffic_tbl')
 
 create_table_query = """
 CREATE TABLE `la_collisions_db`.`traffic_tbl` (
@@ -26,7 +29,9 @@ CREATE TABLE `la_collisions_db`.`traffic_tbl` (
   `victim_sex` VARCHAR(6) NULL,
   `victim_descent` VARCHAR(6) NULL,
   `latitude` DOUBLE(16,14) NOT NULL,
-  `longitude` DOUBLE(17,14)NOT NULL,
+  `longitude` DOUBLE(17,14) NOT NULL,
+  `area_name` VARCHAR(50) NOT NULL,
+  `intersection` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id`)
   )ENGINE = InnoDB DEFAULT CHARACTER SET = utf8 
 """
@@ -40,32 +45,33 @@ csv_data = csv.reader(open('LAtraffic_clean.csv', newline=''))
 next(csv_data, None)
 # Print data to console
 for row in csv_data:
-	date_occurred = row[1]
-	year_occur = row[2]
-	month_occur = row[3]
-	day_occur = row[4]
-	time_occurred = row[5]
-	victim_age = row[6]
-	victim_sex = row[7]
-	victim_descent = row[8]
-	latitude = row[9]
-	longitude = row[10]
+  date_occurred = row[1]
+  year_occur = row[2]
+  month_occur = row[3]
+  day_occur = row[4]
+  time_occurred = row[5]
+  victim_age = row[6]
+  victim_sex = row[7]
+  victim_descent = row[8]
+  latitude = row[9]
+  longitude = row[10]
+  area_name = row[11]
+  intersection = row[12]
 	
 	#try:
 		#date_occurred = datetime.datetime.strptime(date_occurred, "%Y-%m-%d")
 	#except ValueError:
 	#	continue
-		
-	print(row)
-	
-	insert_statement = """INSERT INTO traffic_tbl
-(`date_occurred`, `year_occur`, `month_occur`, `day_occur`, `time_occurred`, `victim_age`, `victim_sex`,`victim_descent`, `latitude`,`longitude`)
+  print(row)
+  
+  insert_statement = """INSERT INTO traffic_tbl
+(`date_occurred`, `year_occur`, `month_occur`, `day_occur`, `time_occurred`, `victim_age`, `victim_sex`,`victim_descent`, `latitude`,`longitude`,`area_name`,`intersection`)
 VALUES
-("%s", %s, %s, %s, %s, %s, "%s", "%s", %s, %s)""" %(date_occurred,year_occur,month_occur,day_occur,time_occurred,victim_age,victim_sex,victim_descent,latitude,longitude)
+("%s", %s, %s, %s, %s, %s, "%s", "%s", %s, %s,"%s","%s")""" % (date_occurred,year_occur,month_occur,day_occur,time_occurred,victim_age,victim_sex,victim_descent,latitude,longitude,area_name,intersection)
 
 
 #print(insert_statement)
-	cursor.execute(insert_statement)
+  cursor.execute(insert_statement)
 
 			 
 		 
