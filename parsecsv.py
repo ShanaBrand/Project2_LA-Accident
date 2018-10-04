@@ -7,8 +7,8 @@ import os
 
 #Connect to the database
 mydb = pymysql.connect(host='localhost',
-                             user='root',
-                             password='mtzion77!',
+                             user='insert username',
+                             password='insert password',
                              db='la_collisions_db',
                              charset='utf8mb4',
                              cursorclass=pymysql.cursors.DictCursor)

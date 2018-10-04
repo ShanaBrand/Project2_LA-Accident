@@ -20,10 +20,10 @@ Base = declarative_base()
 pymysql.install_as_MySQLdb()
 
 # Database Connection
-username = 'root'
-password = 'mtzion77!'
+username = 'insert username'
+password = 'insert password'
 host = 'localhost'
-port = 3306
+port = '3306'
 database = 'la_collisions_db'
 
 # Format:
